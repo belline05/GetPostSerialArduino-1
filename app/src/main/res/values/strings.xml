@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Get Post Serial Arduino</string>
+
+    <string name="receive_ok">Arduino Sent Serial</string>
+
+</resources>

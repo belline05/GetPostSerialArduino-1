@@ -2,10 +2,14 @@ package masterung.androidthai.in.th.getpostserialarduino;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+
+import com.google.zxing.Result;
 
 import masterung.androidthai.in.th.getpostserialarduino.fragment.MainFragment;
+import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }   // Main Method
+
 
 }   // Main Class

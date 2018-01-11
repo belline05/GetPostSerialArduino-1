@@ -1,5 +1,6 @@
 package masterung.androidthai.in.th.getpostserialarduino.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,13 +15,14 @@ import com.google.zxing.Result;
 
 import masterung.androidthai.in.th.getpostserialarduino.MainActivity;
 import masterung.androidthai.in.th.getpostserialarduino.R;
+import masterung.androidthai.in.th.getpostserialarduino.ScanCodeActivity;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 /**
  * Created by masterung on 11/1/2018 AD.
  */
 
-public class MainFragment extends Fragment implements ZXingScannerView.ResultHandler{
+public class MainFragment extends Fragment {
 
     //    Explicit
     private ZXingScannerView zXingScannerView;
@@ -53,12 +55,9 @@ public class MainFragment extends Fragment implements ZXingScannerView.ResultHan
         Toast.makeText(getActivity(), getString(R.string.receive_ok),
                 Toast.LENGTH_SHORT).show();
 
-        zXingScannerView = new ZXingScannerView(getActivity());
-        getActivity().setContentView(zXingScannerView);
-        zXingScannerView.setResultHandler((ZXingScannerView.ResultHandler) getActivity());
-        zXingScannerView.startCamera();
 
-
+        Intent intent = new Intent(getActivity(), ScanCodeActivity.class);
+        startActivity(intent);
 
 
     }   // openScanQRcode
@@ -70,15 +69,6 @@ public class MainFragment extends Fragment implements ZXingScannerView.ResultHan
         return view;
     }
 
-    @Override
-    public void handleResult(Result result) {
-
-        resultCodeString = result.getText().toString();
-        Log.d("11JanV1", "resultCode ==> " + resultCodeString);
-
-
-
-    }
 
 
 }   // Main Class
